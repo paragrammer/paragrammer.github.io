@@ -72,10 +72,24 @@
   
   .social-links {
     margin-top: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
   
   .social-links a {
-    margin-right: 8px;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .social-links a:hover {
+    color: #0066cc;
+  }
+  
+  .social-links img {
+    display: block;
+    vertical-align: middle;
   }
   
   /* Quirky intro paragraph */
@@ -87,24 +101,84 @@
     border-bottom: 1px solid #eee;
   }
   
-  /* Timeline: two-column layout — date left, content right */
+  /* Timeline: vertical line with dots, dates and logos left, content right */
   .timeline {
+    position: relative;
     margin-bottom: 0.5em;
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 73px;
+    top: 0.6em;
+    bottom: 0.6em;
+    width: 1px;
+    background: #ccc;
   }
   
   .timeline-entry {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 24px;
-    margin-bottom: 2em;
+    grid-template-columns: 160px 1fr;
+    gap: 28px;
+    margin-bottom: 2.2em;
     align-items: start;
   }
   
+  .timeline-entry:last-child {
+    margin-bottom: 0;
+  }
+  
+  .timeline-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+  }
+  
   .timeline-date {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-weight: 600;
     color: #333;
-    font-size: 0.95em;
-    padding-top: 2px;
+    font-size: 0.9em;
+    width: 52px;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: 66px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #333;
+    z-index: 1;
+  }
+  
+  .timeline-logo {
+    position: absolute;
+    left: 84px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .timeline-logo img {
+    width: 48px;
+    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: contain;
+    object-position: center;
   }
   
   .timeline-content {
@@ -117,14 +191,6 @@
   
   .timeline-content p:last-child {
     margin-bottom: 0;
-  }
-  
-  .timeline-content img {
-    float: right;
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin: 0 0 12px 16px;
   }
   
   /* Section blocks (bio, featured talks, etc.) */
@@ -204,27 +270,68 @@
     margin: 0 0 0.5em;
   }
   
-  /* Publications */
+  /* Publications — title (blue link), venue, authors */
   .publication {
     margin-bottom: 1.2em;
   }
   
-  .publication a {
-    font-weight: 500;
+  .publication-title {
+    color: #333;
   }
   
-  .publication .venue {
+  .publication a {
+    font-weight: normal;
+    color: #0066cc;
+  }
+  
+  .publication a:hover {
+    text-decoration: underline;
+  }
+  
+  .publication-venue {
     font-size: 0.9em;
     color: #666;
-    margin: 2px 0;
+    margin: 2px 0 4px;
   }
   
-  .publication .authors {
+  .publication-authors {
     font-size: 0.9em;
     color: #555;
   }
   
+  .publication-subsection {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #444;
+    margin: 1.25em 0 0.4em;
+    text-transform: lowercase;
+  }
+  
+  .publication-subsection:first-of-type {
+    margin-top: 0.5em;
+  }
+  
   /* Misc unsorted list */
+  .coursework-category {
+    margin-bottom: 1.2em;
+  }
+  
+  .coursework-category:last-child {
+    margin-bottom: 0;
+  }
+  
+  .coursework-category strong {
+    display: block;
+    font-size: 0.95em;
+    color: #444;
+    margin-bottom: 0.3em;
+  }
+  
+  .coursework-category ul {
+    margin: 0 0 0 1em;
+    padding-left: 1em;
+  }
+  
   .misc-list {
     list-style: none;
     padding: 0;
@@ -252,14 +359,44 @@
       font-size: 16px;
     }
   
+    .timeline::before {
+      left: 46px;
+      top: 0.5em;
+      bottom: 0.5em;
+    }
+  
     .timeline-entry {
       grid-template-columns: 1fr;
-      gap: 4px;
-      margin-bottom: 1.5em;
+      gap: 8px;
+      margin-bottom: 1.8em;
+    }
+  
+    .timeline-track {
+      min-height: 44px;
     }
   
     .timeline-date {
-      margin-bottom: 0;
+      width: 44px;
+      font-size: 0.85em;
+    }
+  
+    .timeline-dot {
+      left: 46px;
+      width: 6px;
+      height: 6px;
+    }
+  
+    .timeline-logo {
+      left: 60px;
+      width: 40px;
+      height: 40px;
+    }
+  
+    .timeline-logo img {
+      width: 40px;
+      height: 40px;
+      max-width: 40px;
+      max-height: 40px;
     }
   
     .header {
