@@ -215,6 +215,21 @@
   .social-links img {
     display: block;
   }
+
+  /* Social icons: light in dark mode, dark in light mode */
+  @media (prefers-color-scheme: dark) {
+    .social-links img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  [data-theme="dark"] .social-links img {
+    filter: brightness(0) invert(1);
+  }
+
+  [data-theme="light"] .social-links img {
+    filter: none;
+  }
   
   /* Quirky intro paragraph */
   .intro-note {
