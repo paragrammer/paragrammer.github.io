@@ -184,10 +184,11 @@
   }
   
   .header-photo {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 4px;
+    border: 1px solid var(--border-color-dark);
   }
   
   .header-text {
@@ -535,8 +536,8 @@
     }
   
     .header-photo {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
     }
   
     .header-text {
