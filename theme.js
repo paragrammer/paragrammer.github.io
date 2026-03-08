@@ -110,14 +110,9 @@
     if (!button) return;
     
     const currentTheme = getCurrentTheme();
-    button.setAttribute('aria-label', 
-      currentTheme === 'dark' 
-        ? 'Switch to light mode' 
-        : 'Switch to dark mode');
-    button.setAttribute('title', 
-      currentTheme === 'dark' 
-        ? 'Switch to light mode' 
-        : 'Switch to dark mode');
+    const action = currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    button.setAttribute('aria-label', action + ' (t)');
+    button.setAttribute('title', action + ' (t)');
   }
 
   // Initialize theme as soon as possible to prevent flash

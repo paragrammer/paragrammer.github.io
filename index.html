@@ -20,6 +20,7 @@
     })();
   </script>
   <script src="theme.js" defer></script>
+  <script src="shortcuts.js" defer></script>
 </head>
 <body>
 
@@ -39,6 +40,17 @@
       <path d="m19.07 4.93-1.41 1.41"/>
     </svg>
   </button>
+
+  <div id="shortcuts-dialog" class="shortcuts-dialog" role="dialog" aria-labelledby="shortcuts-title" aria-modal="true">
+    <div id="shortcuts-backdrop" class="shortcuts-backdrop"></div>
+    <div class="shortcuts-content">
+      <h3 id="shortcuts-title">Keyboard shortcuts</h3>
+      <table class="shortcuts-table">
+        <tbody id="shortcuts-list"></tbody>
+      </table>
+      <p class="shortcuts-hint">Press <kbd>Esc</kbd> or click outside to close</p>
+    </div>
+  </div>
 
   <header class="header">
     <img src="assets/me.png" alt="Michael Tesfaye" class="header-photo">
@@ -211,6 +223,7 @@
     </div>
   </section>
 
+  <p class="footer-note">Press <kbd>?</kbd> for keyboard shortcuts.</p>
 
 </body>
 </html>
