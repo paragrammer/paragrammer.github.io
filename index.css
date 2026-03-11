@@ -70,7 +70,7 @@
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    max-width: 780px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 40px 24px 80px;
     overflow-x: hidden;
@@ -289,6 +289,17 @@
   
   .social-links img {
     display: block;
+  }
+
+  .social-links .resume-link {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+  }
+
+  .social-links .resume-link:hover {
+    color: var(--link-color);
+    text-decoration: none;
   }
 
   /* Social icons: light in dark mode, dark in light mode */
