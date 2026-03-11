@@ -70,7 +70,7 @@
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    max-width: 900px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 40px 24px 80px;
     overflow-x: hidden;
@@ -315,12 +315,12 @@
     border-bottom: 1px solid var(--border-color);
   }
   
-  /* Timeline: vertical line, gray year + faint dot, logo and text right of line */
+  /* Timeline: vertical line, gray year + dot, logo and text right of line */
   .timeline {
     position: relative;
     margin-bottom: 0.5em;
   }
-  
+
   .timeline::before {
     content: "";
     position: absolute;
@@ -330,7 +330,7 @@
     width: 1px;
     background: var(--border-color-dark);
   }
-  
+
   .timeline-entry {
     display: grid;
     grid-template-columns: 165px 1fr;
@@ -338,18 +338,18 @@
     margin-bottom: 2.5em;
     align-items: start;
   }
-  
+
   .timeline-entry:last-child {
     margin-bottom: 0;
   }
-  
+
   .timeline-track {
     position: relative;
     display: flex;
     align-items: center;
     min-height: 56px;
   }
-  
+
   .timeline-date {
     position: absolute;
     left: 0;
@@ -361,10 +361,10 @@
     width: 56px;
     text-align: right;
   }
-  
+
   .timeline-dot {
     position: absolute;
-    left: 68px;
+    left: 72px;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 7px;
@@ -373,10 +373,10 @@
     background: var(--timeline-dot-color);
     z-index: 1;
   }
-  
+
   .timeline-logo {
     position: absolute;
-    left: 86px;
+    left: 90px;
     top: 50%;
     transform: translateY(-50%);
     width: 48px;
@@ -386,7 +386,7 @@
     justify-content: center;
     flex-shrink: 0;
   }
-  
+
   .timeline-logo img {
     width: 48px;
     height: 48px;
@@ -395,23 +395,30 @@
     object-fit: contain;
     object-position: center;
   }
-  
+
   .timeline-content {
     min-width: 0;
   }
-  
+
   .timeline-content p {
     margin: 0 0 0.85em;
     line-height: 1.6;
   }
-  
+
   .timeline-content p:last-child {
     margin-bottom: 0;
   }
   
-  /* Section blocks (bio, featured talks, etc.) */
+  /* Section blocks */
   .section {
-    margin: 2em 0;
+    margin: 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .section > h3 {
+    margin-top: 0;
   }
   
   .section p {
@@ -642,7 +649,7 @@
     .timeline::before {
       display: none;
     }
-  
+
     .timeline-entry {
       grid-template-columns: 1fr;
       gap: 0;
@@ -650,13 +657,13 @@
       padding-bottom: 1.5em;
       border-bottom: 1px solid var(--border-color);
     }
-  
+
     .timeline-entry:last-child {
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 0;
     }
-  
+
     .timeline-track {
       display: flex;
       align-items: center;
@@ -665,7 +672,7 @@
       margin-bottom: 10px;
       position: relative;
     }
-  
+
     .timeline-date {
       position: static;
       transform: none;
@@ -675,7 +682,7 @@
       color: var(--text-color);
       flex-shrink: 0;
     }
-  
+
     .timeline-dot {
       position: static;
       transform: none;
@@ -684,7 +691,7 @@
       width: 6px;
       height: 6px;
     }
-  
+
     .timeline-logo {
       position: static;
       transform: none;
@@ -693,26 +700,27 @@
       height: 40px;
       flex-shrink: 0;
     }
-  
+
     .timeline-logo img {
       width: 40px;
       height: 40px;
       max-width: 40px;
       max-height: 40px;
     }
-  
+
     .timeline-content {
       min-width: 0;
       overflow-wrap: break-word;
     }
-  
+
     .timeline-content p {
       font-size: 0.95em;
       line-height: 1.55;
     }
   
     .section {
-      margin: 1.5em 0;
+      padding-top: 1.25em;
+      padding-bottom: 1.25em;
     }
   
     .project {
@@ -755,25 +763,25 @@
       padding-left: 12px;
       padding-right: 12px;
     }
-  
+
     h1 {
       font-size: 1.5em;
     }
-  
+
     .timeline-track {
       min-height: 44px;
       gap: 8px;
     }
-  
+
     .timeline-date {
       font-size: 0.85em;
     }
-  
+
     .timeline-logo {
       width: 36px;
       height: 36px;
     }
-  
+
     .timeline-logo img {
       width: 36px;
       height: 36px;
